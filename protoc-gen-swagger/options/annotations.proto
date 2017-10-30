@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package grpc_gateway.protoc_gen_swagger.options;
 
-option go_package = "github.com/grpc-ecosystem/grpc-gateway/protoc-gen-swagger/options";
+option go_package = "github.com/eddiezane/grpc-gateway/protoc-gen-swagger/options";
 
 import "protoc-gen-swagger/options/openapiv2.proto";
 import "google/protobuf/descriptor.proto";
@@ -22,4 +22,8 @@ extend google.protobuf.MessageOptions {
 extend google.protobuf.ServiceOptions {
   // TODO(ivucica): ask protobuf-global-extension-registry@google.com to assign ID
   Tag openapiv2_tag = 123456791;
+}
+extend google.protobuf.FieldOptions {
+  // TODO(ivucica): ask protobuf-global-extension-registry@google.com to assign ID
+  bool read_only = 123456791;
 }

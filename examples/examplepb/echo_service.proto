@@ -38,7 +38,7 @@ option (grpc_gateway.protoc_gen_swagger.options.openapiv2_swagger) = {
 message SimpleMessage {
 	// Id represents the message identifier.
 	string id = 1;
-	int64 num = 2;
+	int64 num = 2 [(grpc_gateway.protoc_gen_swagger.options.read_only) = true];
 	option (grpc_gateway.protoc_gen_swagger.options.openapiv2_schema) = {
 		external_docs: {
 			url: "https://github.com/grpc-ecosystem/grpc-gateway";

@@ -111,6 +111,8 @@ type schemaCore struct {
 	Format string `json:"format,omitempty"`
 	Ref    string `json:"$ref,omitempty"`
 
+	ReadOnly bool `json:"readOnly,omitempty"`
+
 	Items *swaggerItemsObject `json:"items,omitempty"`
 
 	// If the item is an enumeration include a list of all the *NAMES* of the

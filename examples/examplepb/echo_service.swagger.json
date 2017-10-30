@@ -131,7 +131,8 @@
         },
         "num": {
           "type": "string",
-          "format": "int64"
+          "format": "int64",
+          "readOnly": true
         }
       },
       "description": "SimpleMessage represents a simple message sent to the Echo service.",

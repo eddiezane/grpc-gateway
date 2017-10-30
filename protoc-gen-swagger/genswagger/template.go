@@ -252,6 +252,17 @@ func schemaOfField(f *descriptor.Field, reg *descriptor.Registry) swaggerSchemaO
 		} else {
 			core = schemaCore{Type: ft.String(), Format: "UNKNOWN"}
 		}
+
+		if f.GetOptions() != nil {
+			v, err := proto.GetExtension(f.GetOptions(), swagger_options.E_ReadOnly)
+			if err != nil {
+				// TODO(eddiezane): Is this the right thing to do?
+				panic(err)
+			}
+			if *v.(*bool) {
+				core.ReadOnly = true
+			}
+		}
 	}
 	switch aggregate {
 	case array:
